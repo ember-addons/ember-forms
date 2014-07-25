@@ -8,30 +8,18 @@
     "Emerson Lackey <emerson.lackey@gmail.com>"
   ],
   "keywords": [
-      "ember",
-      "emberjs",
-      "bootstap",
-      "twitter-bootstrap",
-      "forms",
-      "ui",
-      "html",
-      "js",
-      "javascript",
-      "css3",
-      "css"
+    "ember",
+    "emberjs",
+    "bootstap",
+    "twitter-bootstrap",
+    "forms",
+    "ui",
+    "html",
+    "js",
+    "javascript",
+    "css3",
+    "css"
   ],
-  "ignore": [
-    "**/.*",
-    "!dist",
-    "!LICENSE",
-    "!README.md",
-    "!bower.json",
-    "!dist/",
-    "!dist/*",
-    "!dist/*/*",
-    "!dist/*/*/*"
-  ],
-  "license": "Apache2",
   "ignore": [
     "CHANGELOG.txt",
     "Gruntfile.coffee",
@@ -42,6 +30,7 @@
     "src",
     "test"
   ],
+  "license": "Apache2",
   "devDependencies": {
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
@@ -50,6 +39,7 @@
     "highlightjs": "~8.0.0",
     "ember-qunit": "~0.1.8",
     "ember-model": "~0.0.11",
-    "ember-validations": "http://builds.dockyard.com/ember-validations/latest/ember-validations.js"
+    "ember-validations": "http://builds.dockyard.com/ember-validations/latest/ember-validations.js",
+    "qunit": "~1.14.0"
   }
 }

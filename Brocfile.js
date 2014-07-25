@@ -1,13 +1,13 @@
 var compileES6 = require('broccoli-es6-concatenator');
 var pickFiles = require('broccoli-static-compiler');
 var mergeTrees = require('broccoli-merge-trees');
+var concatTree = require('broccoli-concat');
 
 var docs = pickFiles('gh_pages', {
   srcDir: '/',
   files: ['index.html', 'docs.js', 'docs.css', 'img/ember_logo.png'],
   destDir: '/'
 });
-
 
 var vendorJsDependencies = pickFiles('vendor', {
   srcDir: '/',
@@ -44,4 +44,22 @@ var emberForms = compileES6('lib', {
   ]
 });
 
-module.exports = mergeTrees([emberForms, docs, vendorJsDependencies, vendorCssDependencies]);
+var testDependencies = pickFiles('tests', {
+  srcDir: '/',
+  files: [
+    '../vendor/qunit/qunit/qunit.js',
+    '../vendor/qunit/qunit/qunit.css',
+    '../vendor/ember-qunit/dist/globals/main.js',
+    'index.html'
+  ],
+  destDir: 'tests'
+});
+
+var tests = concatTree('tests', {
+  inputFiles: [
+    '**/*.js'
+  ],
+  outputFile: '/tests/tests.js'
+});
+
+module.exports = mergeTrees([emberForms, docs, tests, testDependencies, vendorJsDependencies, vendorCssDependencies]);
