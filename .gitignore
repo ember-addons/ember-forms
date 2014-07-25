@@ -3,3 +3,4 @@ gh_pages
 build
 node_modules
 .idea
+tmp/**/*
