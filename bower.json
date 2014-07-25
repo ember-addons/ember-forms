@@ -1,10 +1,11 @@
 {
   "name": "ember-forms",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Intuitive, Smart and Beautiful Forms for Ember.js",
   "homepage": "http://ember-addons.github.io/ember-forms",
   "authors": [
-    "Asaf Shakarchi <asaf000@gmail.com>"
+    "Asaf Shakarchi <asaf000@gmail.com>",
+    "Emerson Lackey <emerson.lackey@gmail.com>"
   ],
   "keywords": [
       "ember",
@@ -12,7 +13,6 @@
       "bootstap",
       "twitter-bootstrap",
       "forms",
-      "coffee",
       "ui",
       "html",
       "js",
@@ -45,10 +45,11 @@
   "devDependencies": {
     "jquery": "~2.1.0",
     "bootstrap": "~3.1.1",
-    "ember": "~1.5.1",
+    "ember": "~1.6.1",
     "font-awesome": "~4.0.3",
     "highlightjs": "~8.0.0",
     "ember-qunit": "~0.1.8",
-    "ember-model": "~0.0.11"
+    "ember-model": "~0.0.11",
+    "ember-validations": "http://builds.dockyard.com/ember-validations/latest/ember-validations.js"
   }
 }
