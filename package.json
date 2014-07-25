@@ -8,6 +8,11 @@
   "repository": "",
   "license": "APACHE 2",
   "devDependencies": {
+    "broccoli": "^0.12.3",
+    "broccoli-es6-concatenator": "^0.1.7",
+    "broccoli-file-mover": "^0.4.0",
+    "broccoli-merge-trees": "^0.1.4",
+    "broccoli-static-compiler": "^0.1.4",
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.10.1",
