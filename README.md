@@ -14,3 +14,23 @@ Smart, Intuitive forms for Ember.js styled with Bootstrap &amp; Validation ready
 ## Installation & Tutorial
 
 Please visit the documentation for installation & usage documentations: http://ember-addons.github.io/ember-forms
+
+# Plugin Development
+
+### Requirements
+
+* [npm](https://www.npmjs.org/)
+* [Bower](http://bower.io/)
+* [Broccoli](https://github.com/broccolijs/broccoli)
+
+### Setup
+
+* `git clone https://github.com/indexiatech/ember-forms.git && cd ember-forms`
+* `npm install`
+* `bower install`
+* `broccoli serve` then visit [http://localhost:4200](http://localhost:4200)
+
+### Building the Plugin
+
+* `rm -Rf ./dist`
+* `broccoli build dist`

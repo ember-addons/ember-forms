@@ -52,5 +52,10 @@ vendorDependencies = concatTree(vendorDependencies, {
 });
 
 
+//-- Build our tests ------------------------------------------------------
+
+
+//-- Build our docs -------------------------------------------------------
+
 //-- Export our merged trees to broccoli  ---------------------------------
 module.exports = mergeTrees([appModule, vendorDependencies]);
