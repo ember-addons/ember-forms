@@ -19,6 +19,8 @@ Em.Forms.HasPropertyMixin = Em.Mixin.create
             Em.assert false, 'Property could not be found.'
     ).property('parentView.property')
 
+    name: Em.computed.defaultTo 'propertyName'
+
     init: ->
         @_super()
         Em.Binding.from('model.errors.' + @get('propertyName')).to('errors').connect(this)

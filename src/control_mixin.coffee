@@ -12,3 +12,5 @@ Ember.Forms.ControlMixin = Ember.Mixin.create
     hasValue: (->
         @get('value') isnt null
     ).property('value').readOnly()
+
+    name: Em.computed.alias 'parentView.name'

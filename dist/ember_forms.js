@@ -51,7 +51,8 @@ Ember.Forms.ControlMixin = Ember.Mixin.create({
   },
   hasValue: (function() {
     return this.get('value') !== null;
-  }).property('value').readOnly()
+  }).property('value').readOnly(),
+  name: Em.computed.alias('parentView.name')
 });
 
 
@@ -79,6 +80,7 @@ Em.Forms.HasPropertyMixin = Em.Mixin.create({
       return Em.assert(false, 'Property could not be found.');
     }
   }).property('parentView.property'),
+  name: Em.computed.defaultTo('propertyName'),
   init: function() {
     this._super();
     return Em.Binding.from('model.errors.' + this.get('propertyName')).to('errors').connect(this);
@@ -850,6 +852,7 @@ Em.Forms.FormCheckboxComponent = Em.Forms.FormGroupComponent.extend({
     "class": false,
     model: Em.computed.alias('parentView.parentView.model'),
     propertyName: Em.computed.alias('parentView.parentView.propertyName'),
+    name: Em.computed.alias('parentView.parentView.name'),
     init: function() {
       this._super();
       return Ember.Binding.from("model." + (this.get('propertyName'))).to('checked').connect(this);

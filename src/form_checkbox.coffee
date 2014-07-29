@@ -12,6 +12,7 @@ Em.Forms.FormCheckboxComponent = Em.Forms.FormGroupComponent.extend(
         class: no
         model: Em.computed.alias 'parentView.parentView.model'
         propertyName: Em.computed.alias 'parentView.parentView.propertyName'
+        name: Em.computed.alias 'parentView.parentView.name'
         init: ->
             @_super()
             Ember.Binding.from("model.#{@get('propertyName')}").to('checked').connect(@)
