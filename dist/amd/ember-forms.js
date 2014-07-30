@@ -22,9 +22,9 @@ define(
     var FormControlHelpComponent = __dependency9__["default"] || __dependency9__;
     var FormInputComponent = __dependency10__["default"] || __dependency10__;
     var FormLabelComponent = __dependency11__["default"] || __dependency11__;
-    var FormSelect = __dependency12__["default"] || __dependency12__;
+    var FormSelectComponent = __dependency12__["default"] || __dependency12__;
     var FormSubmitComponent = __dependency13__["default"] || __dependency13__;
-    var FormText = __dependency14__["default"] || __dependency14__;
+    var FormTextComponent = __dependency14__["default"] || __dependency14__;
 
     //-- Templates ------------------------------------------------------------
     var FormTemplate = __dependency15__["default"] || __dependency15__;
@@ -56,7 +56,7 @@ define(
     __exports__.FormControlHelpComponent = FormControlHelpComponent;
     __exports__.FormInputComponent = FormInputComponent;
     __exports__.FormLabelComponent = FormLabelComponent;
-    __exports__.FormSelect = FormSelect;
+    __exports__.FormSelectComponent = FormSelectComponent;
     __exports__.FormSubmitComponent = FormSubmitComponent;
-    __exports__.FormText = FormText;
+    __exports__.FormTextComponent = FormTextComponent;
   });

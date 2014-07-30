@@ -19,9 +19,9 @@ var FormCheckboxComponent = require("./form/checkbox")["default"] || require("./
 var FormControlHelpComponent = require("./form/control_help")["default"] || require("./form/control_help");
 var FormInputComponent = require("./form/input")["default"] || require("./form/input");
 var FormLabelComponent = require("./form/label")["default"] || require("./form/label");
-var FormSelect = require("./form/select")["default"] || require("./form/select");
+var FormSelectComponent = require("./form/select")["default"] || require("./form/select");
 var FormSubmitComponent = require("./form/submit_button")["default"] || require("./form/submit_button");
-var FormText = require("./form/text")["default"] || require("./form/text");
+var FormTextComponent = require("./form/text")["default"] || require("./form/text");
 
 //-- Templates ------------------------------------------------------------
 var FormTemplate = require("./templates/components/form")["default"] || require("./templates/components/form");
@@ -53,6 +53,6 @@ exports.FormCheckboxComponent = FormCheckboxComponent;
 exports.FormControlHelpComponent = FormControlHelpComponent;
 exports.FormInputComponent = FormInputComponent;
 exports.FormLabelComponent = FormLabelComponent;
-exports.FormSelect = FormSelect;
+exports.FormSelectComponent = FormSelectComponent;
 exports.FormSubmitComponent = FormSubmitComponent;
-exports.FormText = FormText;
+exports.FormTextComponent = FormTextComponent;

@@ -20,9 +20,9 @@ var FormCheckboxComponent = _dereq_("./form/checkbox")["default"] || _dereq_("./
 var FormControlHelpComponent = _dereq_("./form/control_help")["default"] || _dereq_("./form/control_help");
 var FormInputComponent = _dereq_("./form/input")["default"] || _dereq_("./form/input");
 var FormLabelComponent = _dereq_("./form/label")["default"] || _dereq_("./form/label");
-var FormSelect = _dereq_("./form/select")["default"] || _dereq_("./form/select");
+var FormSelectComponent = _dereq_("./form/select")["default"] || _dereq_("./form/select");
 var FormSubmitComponent = _dereq_("./form/submit_button")["default"] || _dereq_("./form/submit_button");
-var FormText = _dereq_("./form/text")["default"] || _dereq_("./form/text");
+var FormTextComponent = _dereq_("./form/text")["default"] || _dereq_("./form/text");
 
 //-- Templates ------------------------------------------------------------
 var FormTemplate = _dereq_("./templates/components/form")["default"] || _dereq_("./templates/components/form");
@@ -54,9 +54,9 @@ exports.FormCheckboxComponent = FormCheckboxComponent;
 exports.FormControlHelpComponent = FormControlHelpComponent;
 exports.FormInputComponent = FormInputComponent;
 exports.FormLabelComponent = FormLabelComponent;
-exports.FormSelect = FormSelect;
+exports.FormSelectComponent = FormSelectComponent;
 exports.FormSubmitComponent = FormSubmitComponent;
-exports.FormText = FormText;
+exports.FormTextComponent = FormTextComponent;
 },{"./form/checkbox":2,"./form/control_help":3,"./form/form":4,"./form/form_group":5,"./form/input":6,"./form/label":7,"./form/select":8,"./form/submit_button":9,"./form/text":10,"./mixins/control":11,"./mixins/has_property":12,"./mixins/has_property_validation":13,"./mixins/in_form":14,"./templates/components/form":19,"./templates/components/form-control-help":15,"./templates/components/form-group":16,"./templates/components/form-label":17,"./templates/components/form-submit-button":18,"./templates/components/formgroup/_control-within-label":20,"./templates/components/formgroup/_form-group":22,"./templates/components/formgroup/_form-group-control":21,"./utils/utils":23}],2:[function(_dereq_,module,exports){
 "use strict";
 /*

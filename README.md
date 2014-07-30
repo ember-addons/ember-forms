@@ -38,3 +38,9 @@ Please visit the documentation for installation & usage documentations: http://e
 ### Running the Tests
 
 * Once the server is running you should be able to visit [http://localhost:4200/tests](http://localhost:4200/tests)
+
+
+### Want to Help? Ongoing Tasks:
+
+* Convert our tests to ES6
+* Better test coverage
