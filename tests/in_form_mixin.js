@@ -1,5 +1,5 @@
 moduleForComponent('form', 'In Form Mixin', {
-  needs: ['component:form-submit', 'template:components/form-submit-button', 'component:form-input', 'component:form-group', 'template:components/form-group', 'template:components/_form-group']
+  needs: ['component:form-submit', 'template:components/form-submit-button', 'component:form-input', 'component:form-group', 'template:components/form-group', 'template:components/formgroup/_form-group']
 });
 
 test("Get form & model", function() {

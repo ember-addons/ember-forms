@@ -34,3 +34,7 @@ Please visit the documentation for installation & usage documentations: http://e
 
 * `rm -Rf ./dist`
 * `broccoli build dist`
+
+### Running the Tests
+
+* Once the server is running you should be able to visit [http://localhost:4200/tests](http://localhost:4200/tests)
