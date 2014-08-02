@@ -19,6 +19,8 @@ define(
     var FormSelectComponent = FormGroupComponent.extend({
       v_icons: false,
       controlView: Em.Select.extend(ControlMixin, {
+        attributeBindings: ['name'],
+        name: Em.computed.alias('parentView.name'),
         model: Em.computed.alias('parentView.model'),
         propertyName: Em.computed.alias('parentView.propertyName'),
         content: Em.computed.alias('parentView.content'),

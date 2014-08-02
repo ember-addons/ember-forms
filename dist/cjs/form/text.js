@@ -11,7 +11,8 @@ var ControlMixin = require("../mixins/control")["default"] || require("../mixins
 
 var FormTextComponent = FormGroupComponent.extend({
   controlView: Em.TextArea.extend(ControlMixin, {
-    attributeBindings: ['placeholder'],
+    attributeBindings: ['placeholder', 'name'],
+    name: Em.computed.alias('parentView.name'),
     placeholder: Em.computed.alias('parentView.placeholder'),
     model: Em.computed.alias('parentView.model'),
     propertyName: Em.computed.alias('parentView.propertyName'),

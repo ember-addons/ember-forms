@@ -17,6 +17,8 @@ define(
       validations: false,
       yieldInLabel: true,
       controlView: Ember.Checkbox.extend(ControlMixin, {
+        attributeBindings: ['name'],
+        name: Em.computed.alias('parentView.name'),
         "class": false,
         model: Ember.computed.alias('parentView.parentView.model'),
         propertyName: Ember.computed.alias('parentView.parentView.propertyName'),

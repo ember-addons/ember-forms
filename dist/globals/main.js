@@ -74,6 +74,8 @@ var FormCheckboxComponent = FormGroupComponent.extend({
   validations: false,
   yieldInLabel: true,
   controlView: Ember.Checkbox.extend(ControlMixin, {
+    attributeBindings: ['name'],
+    name: Em.computed.alias('parentView.name'),
     "class": false,
     model: Ember.computed.alias('parentView.parentView.model'),
     propertyName: Ember.computed.alias('parentView.parentView.propertyName'),
@@ -327,11 +329,12 @@ var FormGroupComponent = _dereq_("./form_group")["default"] || _dereq_("./form_g
 
 var FormInputComponent = FormGroupComponent.extend({
   controlView: Em.TextField.extend(ControlMixin, {
-    attributeBindings: ['placeholder', 'required', 'autofocus', 'disabled'],
+    attributeBindings: ['placeholder', 'required', 'autofocus', 'disabled', 'name'],
     placeholder: Em.computed.alias('parentView.placeholder'),
     required: Em.computed.alias('parentView.required'),
     autofocus: Em.computed.alias('parentView.autofocus'),
     disabled: Em.computed.alias('parentView.disabled'),
+    name: Em.computed.alias('parentView.name'),
     type: Em.computed.alias('parentView.type'),
     model: Em.computed.alias('parentView.model'),
     propertyName: Em.computed.alias('parentView.propertyName')
@@ -419,6 +422,8 @@ var ControlMixin = _dereq_("../mixins/control")["default"] || _dereq_("../mixins
 var FormSelectComponent = FormGroupComponent.extend({
   v_icons: false,
   controlView: Em.Select.extend(ControlMixin, {
+    attributeBindings: ['name'],
+    name: Em.computed.alias('parentView.name'),
     model: Em.computed.alias('parentView.model'),
     propertyName: Em.computed.alias('parentView.propertyName'),
     content: Em.computed.alias('parentView.content'),
@@ -489,7 +494,8 @@ var ControlMixin = _dereq_("../mixins/control")["default"] || _dereq_("../mixins
 
 var FormTextComponent = FormGroupComponent.extend({
   controlView: Em.TextArea.extend(ControlMixin, {
-    attributeBindings: ['placeholder'],
+    attributeBindings: ['placeholder', 'name'],
+    name: Em.computed.alias('parentView.name'),
     placeholder: Em.computed.alias('parentView.placeholder'),
     model: Em.computed.alias('parentView.model'),
     propertyName: Em.computed.alias('parentView.propertyName'),
