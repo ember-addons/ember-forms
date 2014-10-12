@@ -19,6 +19,8 @@ Syntax:
     submit_button=true|false
     //if true validation icons will be rendered
     v_icons=true|false
+    //if true show all errors whether user entered something in the field or not
+    showAllErrors=true|false
 }}
 ###
 FormComponent = Component.extend
@@ -47,6 +49,8 @@ FormComponent = Component.extend
     submit_button: true
     #if true validation icons per group will be visible
     v_icons: true
+    #if true shows all errors
+    showAllErrors: false
 
     ###
     Form submit

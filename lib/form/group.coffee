@@ -21,6 +21,8 @@ Syntax:
     yieldInLabel=true|false
     //If true validation icons will be rendered, by default inherited from the form
     v_icons: true
+    //if true show all errors, by default inherited from the form
+    showAllErrors=false
     //Label of the form group, default is a human friendly form of the property name
     label="Some label"
 }}
@@ -38,6 +40,8 @@ FormGroupComponent = Component.extend(InFormMixin, HasPropertyMixin, HasProperty
 
     #should render icons? inherited from form
     v_icons: Em.computed.alias 'form.v_icons'
+    #should all errors be shown? inherited from form
+    showAllErrors: Em.computed.alias 'form.showAllErrors'
 
     v_success_icon: 'fa fa-check'
     v_warn_icon: 'fa fa-exclamation-triangle'
@@ -56,6 +60,10 @@ FormGroupComponent = Component.extend(InFormMixin, HasPropertyMixin, HasProperty
             when 'error' then @get('v_error_icon')
             else null
     ).property('status', 'canShowErrors')
+
+    canShowErrors: (->
+        (@get 'showAllErrors') or @get 'canShowErrorsFromFocusOut'
+    ).property('showAllErrors', 'canShowErrorsFromFocusOut')
 
     init: ->
         @_super()
@@ -79,7 +87,7 @@ FormGroupComponent = Component.extend(InFormMixin, HasPropertyMixin, HasProperty
     Listen to the focus out of the form group and display the errors
     ###
     focusOut: ->
-        @set('canShowErrors', true)
+        @set('canShowErrorsFromFocusOut', true)
 )
 
 Em.Handlebars.helper('em-form-group', FormGroupComponent)

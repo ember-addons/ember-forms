@@ -23,6 +23,8 @@ define(
         submit_button=true|false
         //if true validation icons will be rendered
         v_icons=true|false
+        //if true show all errors whether user entered something in the field or not
+        showAllErrors=true|false
     }}
      */
     var FormComponent;
@@ -50,6 +52,7 @@ define(
       form_layout: 'form',
       submit_button: true,
       v_icons: true,
+      showAllErrors: false,
 
       /*
       Form submit
