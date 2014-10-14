@@ -1,10 +1,36 @@
 {
   "name": "ember-forms",
-  "version": "0.0.3",
+  "description": "Intuitive, Smart and Beautiful Forms for Ember.js",
+  "version": "0.0.4",
+  "keywords": [
+    "ember",
+    "emberjs",
+    "bootstap",
+    "twitter-bootstrap",
+    "forms",
+    "coffee",
+    "ui",
+    "html",
+    "js",
+    "javascript",
+    "css3",
+    "css"
+  ],
   "main": "Brocfile.js",
   "scripts": {},
   "repository": "",
   "license": "APACHE 2",
+  "author": "Asaf Shakarchi <asaf000@gmail.com>",
+  "contributors": [
+    "Felix Fichte <dev@spruce.de>"
+  ],
+  "repository": "https://github.com/spruce/ember-forms",
+  "homepage": "https://github.com/spruce/ember-forms",
+  "bugs": "https://github.com/spruce/ember-forms/issues",
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
   "devDependencies": {
     "broccoli": "^0.12.3",
     "broccoli-bower": "^0.2.1",
