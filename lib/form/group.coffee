@@ -65,6 +65,16 @@ FormGroupComponent = Component.extend(InFormMixin, HasPropertyMixin, HasProperty
         (@get 'showAllErrors') or @get 'canShowErrorsFromFocusOut'
     ).property('showAllErrors', 'canShowErrorsFromFocusOut')
 
+    shouldShowHelp: (->
+        console.log "helpText:", @get('helpText')
+        @get('helpText')?.length > 0 and @get('canShowErrors')
+    ).property('canShowErrors', 'helpText')
+
+    helpText: (->
+        @get('errors.firstObject') || @get('text')
+    ).property('text', 'errors.firstObject')
+    
+    # shouldShowHelp: true
     init: ->
         @_super()
 

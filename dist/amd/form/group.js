@@ -74,6 +74,14 @@ define(
       canShowErrors: (function() {
         return (this.get('showAllErrors')) || this.get('canShowErrorsFromFocusOut');
       }).property('showAllErrors', 'canShowErrorsFromFocusOut'),
+      shouldShowHelp: (function() {
+        var _ref;
+        console.log("helpText:", this.get('helpText'));
+        return ((_ref = this.get('helpText')) != null ? _ref.length : void 0) > 0 && this.get('canShowErrors');
+      }).property('canShowErrors', 'helpText'),
+      helpText: (function() {
+        return this.get('errors.firstObject') || this.get('text');
+      }).property('text', 'errors.firstObject'),
       init: function() {
         return this._super();
       },

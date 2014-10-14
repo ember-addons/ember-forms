@@ -271,6 +271,14 @@ define("ember-forms/form/group",
       canShowErrors: (function() {
         return (this.get('showAllErrors')) || this.get('canShowErrorsFromFocusOut');
       }).property('showAllErrors', 'canShowErrorsFromFocusOut'),
+      shouldShowHelp: (function() {
+        var _ref;
+        console.log("helpText:", this.get('helpText'));
+        return ((_ref = this.get('helpText')) != null ? _ref.length : void 0) > 0 && this.get('canShowErrors');
+      }).property('canShowErrors', 'helpText'),
+      helpText: (function() {
+        return this.get('errors.firstObject') || this.get('text');
+      }).property('text', 'errors.firstObject'),
       init: function() {
         return this._super();
       },
@@ -764,7 +772,7 @@ define("ember-forms/templates/components/formgroup/form-group",
   ["exports"],
   function(__exports__) {
     "use strict";
-    __exports__["default"] = Ember.Handlebars.compile("{{#unless template}}\n    {{#if label}}\n        {{#if yieldInLabel}}\n            {{#if labelWrapperClass}}\n                <div {{bind-attr class=labelWrapperClass}}>\n                    {{partial \'components/formgroup/control-within-label\'}}\n                </div>\n            {{else}}\n                {{partial \'components/formgroup/control-within-label\'}}\n            {{/if}}\n        {{else}}\n            {{#if labelWrapperClass}}\n                <div {{bind-attr class=labelWrapperClass}}>\n                    {{em-form-label text=label viewName=labelViewName}}\n                    {{partial \'components/formgroup/form-group-control\'}}\n                </div>\n            {{else}}\n                {{em-form-label text=label viewName=labelViewName}}\n                {{partial \'components/formgroup/form-group-control\'}}\n            {{/if}}\n        {{/if}}\n    {{else}}\n        {{partial \'components/formgroup/form-group-control\'}}\n    {{/if}}\n\n    {{#if v_icons}}\n        <span class=\"form-control-feedback\"><i {{bind-attr class=v_icon}}></i></span>\n    {{/if}}\n\n    {{!Currently no errors when layout is inline}}\n    {{#unless form.isInline}}\n        {{#if canShowErrors}}\n            {{em-form-control-help text=help viewName=helpViewName}}\n        {{/if}}\n    {{/unless}}\n{{else}}\n    {{yield}}\n{{/unless}}");
+    __exports__["default"] = Ember.Handlebars.compile("{{#unless template}}\n    {{#if label}}\n        {{#if yieldInLabel}}\n            {{#if labelWrapperClass}}\n                <div {{bind-attr class=labelWrapperClass}}>\n                    {{partial \'components/formgroup/control-within-label\'}}\n                </div>\n            {{else}}\n                {{partial \'components/formgroup/control-within-label\'}}\n            {{/if}}\n        {{else}}\n            {{#if labelWrapperClass}}\n                <div {{bind-attr class=labelWrapperClass}}>\n                    {{em-form-label text=label viewName=labelViewName}}\n                    {{partial \'components/formgroup/form-group-control\'}}\n                </div>\n            {{else}}\n                {{em-form-label text=label viewName=labelViewName}}\n                {{partial \'components/formgroup/form-group-control\'}}\n            {{/if}}\n        {{/if}}\n    {{else}}\n        {{partial \'components/formgroup/form-group-control\'}}\n    {{/if}}\n\n    {{#if v_icons}}\n        <span class=\"form-control-feedback\"><i {{bind-attr class=v_icon}}></i></span>\n    {{/if}}\n\n    {{!Currently no errors when layout is inline}}\n    {{#unless form.isInline}}\n        {{#if shouldShowHelp}}\n            {{em-form-control-help text=help viewName=helpViewName}}\n        {{/if}}\n    {{/unless}}\n{{else}}\n    {{yield}}\n{{/unless}}");
   });
 define("ember-forms/utils/utils",
   ["exports"],
