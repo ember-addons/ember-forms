@@ -500,32 +500,11 @@ define("ember-forms/form/text",
       return Handlebars.helpers.view.call(this, FormTextComponent, options);
     });
 
-    __exports__["default"] = FormGroupComponent;
-  });
-define("ember-forms/inline/em-il-input",
-  ["exports"],
-  function(__exports__) {
-    "use strict";
-    var InlineInput;
-
-    InlineInput = Ember.Component.extend({
-      tagName: 'span',
-      attributeBindings: ['href'],
-      href: '#',
-      layoutName: 'components/em-il-input',
-      edit: false,
-      componentClicked: (function(e) {
-        return this.set('edit', true);
-      }).on('click')
-    });
-
-    Ember.Handlebars.helper('em-il-input', InlineInput);
-
-    __exports__["default"] = InlineInput;
+    __exports__["default"] = FormTextComponent;
   });
 define("ember-forms",
-  ["ember","./utils/utils","./mixins/control","./mixins/in_form","./mixins/has_property","./mixins/has_property_validation","./form/form","./form/group","./form/checkbox","./form/control_help","./form/input","./form/label","./form/select","./form/submit_button","./form/text","./inline/em-il-input","./templates/components/form","./templates/components/form-group","./templates/components/formgroup/form-group","./templates/components/formgroup/form-group-control","./templates/components/formgroup/control-within-label","./templates/components/form-label","./templates/components/form-control-help","./templates/components/form-submit-button","./templates/components/em-il-input","exports"],
-  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__, __dependency8__, __dependency9__, __dependency10__, __dependency11__, __dependency12__, __dependency13__, __dependency14__, __dependency15__, __dependency16__, __dependency17__, __dependency18__, __dependency19__, __dependency20__, __dependency21__, __dependency22__, __dependency23__, __dependency24__, __dependency25__, __exports__) {
+  ["ember","./utils/utils","./mixins/control","./mixins/in_form","./mixins/has_property","./mixins/has_property_validation","./form/form","./form/group","./form/checkbox","./form/control_help","./form/input","./form/label","./form/select","./form/submit_button","./form/text","./templates/components/form","./templates/components/form-group","./templates/components/formgroup/form-group","./templates/components/formgroup/form-group-control","./templates/components/formgroup/control-within-label","./templates/components/form-label","./templates/components/form-control-help","./templates/components/form-submit-button","exports"],
+  function(__dependency1__, __dependency2__, __dependency3__, __dependency4__, __dependency5__, __dependency6__, __dependency7__, __dependency8__, __dependency9__, __dependency10__, __dependency11__, __dependency12__, __dependency13__, __dependency14__, __dependency15__, __dependency16__, __dependency17__, __dependency18__, __dependency19__, __dependency20__, __dependency21__, __dependency22__, __dependency23__, __exports__) {
     "use strict";
     var Application = __dependency1__.Application;
 
@@ -557,25 +536,21 @@ define("ember-forms",
 
     var FormTextComponent = __dependency15__["default"] || __dependency15__;
 
-    var FormInlineComponent = __dependency16__["default"] || __dependency16__;
+    var FormTemplate = __dependency16__["default"] || __dependency16__;
 
-    var FormTemplate = __dependency17__["default"] || __dependency17__;
+    var FormGroupTemplate = __dependency17__["default"] || __dependency17__;
 
-    var FormGroupTemplate = __dependency18__["default"] || __dependency18__;
+    var FormGroupPartialTemplate = __dependency18__["default"] || __dependency18__;
 
-    var FormGroupPartialTemplate = __dependency19__["default"] || __dependency19__;
+    var FormGroupControlPartialTemplate = __dependency19__["default"] || __dependency19__;
 
-    var FormGroupControlPartialTemplate = __dependency20__["default"] || __dependency20__;
+    var FormGroupControlWithinLabelPartialTemplate = __dependency20__["default"] || __dependency20__;
 
-    var FormGroupControlWithinLabelPartialTemplate = __dependency21__["default"] || __dependency21__;
+    var FormLabelTemplate = __dependency21__["default"] || __dependency21__;
 
-    var FormLabelTemplate = __dependency22__["default"] || __dependency22__;
+    var FormControlHelpTemplate = __dependency22__["default"] || __dependency22__;
 
-    var FormControlHelpTemplate = __dependency23__["default"] || __dependency23__;
-
-    var SubmitButtonTemplate = __dependency24__["default"] || __dependency24__;
-
-    var InlineInputTemplate = __dependency25__["default"] || __dependency25__;
+    var SubmitButtonTemplate = __dependency23__["default"] || __dependency23__;
 
     Ember.TEMPLATES['components/form'] = FormTemplate;;
     Ember.TEMPLATES['components/form-group'] = FormGroupTemplate;;
@@ -585,7 +560,6 @@ define("ember-forms",
     Ember.TEMPLATES['components/form-label'] = FormLabelTemplate;;
     Ember.TEMPLATES['components/form-control-help'] = FormControlHelpTemplate;;
     Ember.TEMPLATES['components/form-submit-button'] = SubmitButtonTemplate;;
-    Ember.TEMPLATES['components/em-il-input'] = InlineInputTemplate;;
     Application.initializer({
       name: 'ember-forms',
       initialize: function(container) {
@@ -734,12 +708,6 @@ define("ember-forms/mixins/in_form",
     });
 
     __exports__["default"] = InFormMixin;
-  });
-define("ember-forms/templates/components/em-il-input",
-  ["exports"],
-  function(__exports__) {
-    "use strict";
-    __exports__["default"] = Ember.Handlebars.compile("{{#if edit}}\n    {{#em-form form_layout=\"inline\"}}\n        {{em-input}}\n    {{/em-form}}\n{{else}}\n    {{yield}}\n{{/if}}");
   });
 define("ember-forms/templates/components/form-control-help",
   ["exports"],

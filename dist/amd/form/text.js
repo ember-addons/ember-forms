@@ -40,5 +40,5 @@ define(
       return Handlebars.helpers.view.call(this, FormTextComponent, options);
     });
 
-    __exports__["default"] = FormGroupComponent;
+    __exports__["default"] = FormTextComponent;
   });
