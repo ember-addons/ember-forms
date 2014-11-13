@@ -61,9 +61,11 @@ FormComponent = Component.extend
         else
             promise = this.get('model').validate()
 
-            promise.then(=>
+            promise
+               .then =>
                 @get('targetObject').send @get('action') if @get('model.isValid')
-            )
+               , =>
+
 
 Handlebars.helper('em-form', FormComponent)
 
