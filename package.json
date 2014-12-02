@@ -1,7 +1,7 @@
 {
   "name": "ember-forms",
   "description": "Intuitive, Smart and Beautiful Forms for Ember.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [
     "ember",
     "emberjs",
@@ -18,13 +18,12 @@
   ],
   "main": "Brocfile.js",
   "scripts": {},
-  "repository": "",
+  "repository": "https://github.com/spruce/ember-forms",
   "license": "APACHE 2",
   "author": "Asaf Shakarchi <asaf000@gmail.com>",
   "contributors": [
     "Felix Fichte <dev@spruce.de>"
   ],
-  "repository": "https://github.com/spruce/ember-forms",
   "homepage": "https://github.com/spruce/ember-forms",
   "bugs": "https://github.com/spruce/ember-forms/issues",
   "dependencies": {},
