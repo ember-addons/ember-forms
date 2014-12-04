@@ -33,15 +33,6 @@
 `import FormControlHelpTemplate from './templates/components/form-control-help';`
 `import SubmitButtonTemplate from './templates/components/form-submit-button';`
 
-`Ember.TEMPLATES['components/form'] = FormTemplate;`
-`Ember.TEMPLATES['components/form-group'] = FormGroupTemplate;`
-`Ember.TEMPLATES['components/formgroup/form-group'] = FormGroupPartialTemplate;`
-`Ember.TEMPLATES['components/formgroup/form-group-control'] = FormGroupControlPartialTemplate;`
-`Ember.TEMPLATES['components/formgroup/control-within-label'] = FormGroupControlWithinLabelPartialTemplate;`
-`Ember.TEMPLATES['components/form-label'] = FormLabelTemplate;`
-`Ember.TEMPLATES['components/form-control-help'] = FormControlHelpTemplate;`
-`Ember.TEMPLATES['components/form-submit-button'] = SubmitButtonTemplate;`
-
 Application.initializer
     name: 'ember-forms',
     initialize: (container) ->
