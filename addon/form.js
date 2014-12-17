@@ -46,11 +46,12 @@ export default Em.Component.extend({
 
   /*
   Form submit
-  
+
   Optionally execute model validations and perform a form submission.
    */
   submit: function(e) {
     var promise;
+    var self = this;
     if (e) {
       e.preventDefault();
     }
@@ -64,7 +65,21 @@ export default Em.Component.extend({
             return _this.get('targetObject').send(_this.get('action'));
           }
         };
+      })(this)).catch((function(_this) {
+      // if the form don't valdiate.
+      // show errors on all fields.
+        self.showErrors(_this);
       })(this));
     }
+  }
+  // show errors on all child fields.
+  showErrors: function (view) {
+    var self = this;
+    jQuery.each(view._childViews, function (key, validation) {
+      validation.set('canShowErrors', true);
+      if (validation._childViews) {
+        self.showErrors(validation);
+      }
+    });
   }
 });
