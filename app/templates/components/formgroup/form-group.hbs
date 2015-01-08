@@ -29,7 +29,7 @@
 
     {{!Currently no errors when layout is inline}}
     {{#unless form.isInline}}
-        {{#if canShowErrors}}
+        {{#if shouldShowHelp}}
             {{em-form-control-help text=help viewName=helpViewName}}
         {{/if}}
     {{/unless}}
