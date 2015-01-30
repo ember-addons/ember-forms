@@ -23,10 +23,6 @@
         {{partial 'components/formgroup/form-group-control'}}
     {{/if}}
 
-    {{#if v_icons}}
-        <span class="form-control-feedback"><i {{bind-attr class=v_icon}}></i></span>
-    {{/if}}
-
     {{!Currently no errors when layout is inline}}
     {{#unless form.isInline}}
         {{#if canShowErrors}}
