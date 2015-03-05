@@ -4,7 +4,8 @@
   "description": "Intuitive, Smart and Beautiful Forms for Ember.js",
   "homepage": "http://ember-addons.github.io/ember-forms",
   "authors": [
-    "Asaf Shakarchi <asaf000@gmail.com>"
+    "Asaf Shakarchi <asaf000@gmail.com>",
+    "Felix Fichte <dev@spruce.de>"
   ],
   "keywords": [
     "ember",

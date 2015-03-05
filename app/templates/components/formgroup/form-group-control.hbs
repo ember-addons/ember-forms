@@ -1,7 +1,16 @@
 {{#if controlWrapper}}
     <div {{bind-attr class=controlWrapper}}>
-        {{view controlView viewName=controlViewName property=propertyName id=cid}}
+        {{#if data-html}}
+            {{view controlView viewName=controlViewName property=propertyName id=cid data-html=data-html data-placement=data-placement data-toggle=data-toggle title=title}}
+        {{else}}
+            {{view controlView viewName=controlViewName property=propertyName id=cid}}
+        {{/if}}
     </div>
 {{else}}
-    {{view controlView viewName=controlViewName property=propertyName id=cid}}
+    {{#if data-html}}
+        {{view controlView viewName=controlViewName property=propertyName id=cid data-html=data-html data-placement=data-placement data-toggle=data-toggle title=title}}
+    {{else}}
+        {{view controlView viewName=controlViewName property=propertyName id=cid}}
+    {{/if}}
 {{/if}}
+

@@ -21,6 +21,8 @@ Syntax:
     yieldInLabel=true|false
     //If true validation icons will be rendered, by default inherited from the form
     v_icons: true
+    //if true show all errors, by default inherited from the form
+    showAllErrors=false
     //Label of the form group, default is a human friendly form of the property name
     label="Some label"
 }}
@@ -51,6 +53,7 @@ export default Em.Component.extend(InFormMixin, HasPropertyMixin, HasPropertyVal
     return error;
   }).property('status', 'canShowErrors'),
   v_icons: Em.computed.alias('form.v_icons'),
+  showAllErrors: Em.computed.alias('form.showAllErrors'),
   v_success_icon: 'fa fa-check',
   v_warn_icon: 'fa fa-exclamation-triangle',
   v_error_icon: 'fa fa-times',
@@ -72,6 +75,16 @@ export default Em.Component.extend(InFormMixin, HasPropertyMixin, HasPropertyVal
         return null;
     }
   }).property('status', 'canShowErrors'),
+  canShowErrors: (function() {
+    return (this.get('showAllErrors')) || this.get('canShowErrorsFromFocusOut');
+  }).property('showAllErrors', 'canShowErrorsFromFocusOut'),
+  shouldShowHelp: (function() {
+    var _ref;
+    return ((_ref = this.get('helpText')) != null ? _ref.length : void 0) > 0 && this.get('canShowErrors');
+  }).property('canShowErrors', 'helpText'),
+  helpText: (function() {
+    return this.get('errors.firstObject') || this.get('text');
+  }).property('text', 'errors.firstObject'),
   init: function() {
     return this._super();
   },
@@ -84,6 +97,6 @@ export default Em.Component.extend(InFormMixin, HasPropertyMixin, HasPropertyVal
   Listen to the focus out of the form group and display the errors
    */
   focusOut: function() {
-    return this.set('canShowErrors', true);
+    return this.set('canShowErrorsFromFocusOut', true);
   }
 });
