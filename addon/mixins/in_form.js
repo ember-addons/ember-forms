@@ -17,5 +17,5 @@ export default Em.Mixin.create({
   }).property('parentView'),
   model: (function() {
     return this.get('form.model');
-  }).property('form')
+  }).property('form', 'form.model')
 });
