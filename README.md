@@ -19,6 +19,7 @@ With Ember-CLI:
 ```
 npm install --save-dev ember-idx-forms
 ```
+When you need support for ember version >= 2.0 please use https://github.com/piceaTech/ember-rapid-forms
 
 Please visit the documentation for installation & usage documentations: http://indexiatech.github.io/ember-forms
 
